@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <html>
+        <head>
+            <title>{{ title }} - Microblog</title>
+            <style>
+                table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                
+                td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                }
+                
+                tr:nth-child(even) {
+                    background-color: #dddddd;
+                }
+                </style>
+        </head>
+        <body>
+            
+            <table>
+                <tr>
+                    {% for k, v in data.iteritems() %}
+                    <td>{{k}}</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for k, v in data.iteritems() %}
+                    <td>{{v}}</td>
+                    {% endfor %}
+                </tr>
+              </table>
+        </body>
+    </html>
+{% endblock %}
